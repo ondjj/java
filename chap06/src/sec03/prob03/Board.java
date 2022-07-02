@@ -8,6 +8,7 @@ public class Board {
 	String date;
 	int hitcount;
 	
+
 	Board(String title, String content){
 		this(title, content, "로그인한 회원아이디", "현재 컴퓨터 날짜", 0);
 	}
