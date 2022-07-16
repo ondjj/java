@@ -27,24 +27,29 @@ public class SelectWordAndReverse {
 		Scanner in = new Scanner(System.in);
 		String str = in.next();
 		
-		in.close();
+		
 		for(int i = 0; i<str.length();i++) {
 			char[] s = str.toCharArray();
 			int lt=0, rt=s.length-1;
 			
 			while(lt<rt) {
-				char tmp=s[lt];
-				s[lt] = s[rt];
-				s[rt] = tmp;
-				lt++;
-				rt--;
+				if((s[lt] >= 65 && s[lt] <= 122) && (s[rt] >= 65 && s[rt] <= 122)) {
+					
+					char tmp=s[lt];
+					s[lt] = s[rt];
+					s[rt] = tmp;
+					lt++;
+					rt--;
+				}else if((s[rt] < 65 || s[rt] > 122)){
+					rt--;
+				}else if((s[lt] < 65 || s[lt] > 122)) {
+					lt++;
+				}
 			}
 			String tmp = String.valueOf(s);
 			answer=tmp;
 		}
 		System.out.println(answer);
-		
-		
 		
 	}
 
