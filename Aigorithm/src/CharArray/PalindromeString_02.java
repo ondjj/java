@@ -1,5 +1,8 @@
 package CharArray;
 
+import java.time.LocalTime;
+import java.util.Scanner;
+
 public class PalindromeString_02 {
 
 	public static void main(String[] args) {
@@ -18,12 +21,34 @@ public class PalindromeString_02 {
 		 * 
 		 * 출력 첫 번째 줄에 팰린드롬인지의 결과를 YES 또는 NO로 출력합니다.
 		 * 
-		 * 예시 입력 1
-		 * found7, time: study; Yduts; emit, 7Dnuof 
-		 * 예시 출력 1
-		 * YES
+		 * 예시 입력 1 found7, time: study; Yduts; emit, 7Dnuof 예시 출력 1 YES a - z : 97 ~ 122
+		 * A - Z : 65 ~ 90
 		 */
+		Scanner in = new Scanner(System.in);
+		String str = in.nextLine().toLowerCase().replaceAll("[^a-z]", "");
+		char[] chStr = str.toCharArray();
+		boolean flag = true;
+		
 
+		
+		int lt = 0;
+		int rt = chStr.length-1;
+		
+		for (int i = 0; i < chStr.length; i++) {
+			if(chStr[lt] == chStr[rt] ) {
+				lt ++;
+				rt--;
+				flag = true;
+			}else {
+				System.out.println("NO");
+				flag = false;
+				break;
+			}
+			
+		}
+		if(flag == true) {
+			System.out.println("YES");
+		}
 	}
 
 }
