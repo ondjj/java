@@ -23,23 +23,19 @@ public class DuplicatedWord {
 		 */
 		
 		Scanner in = new Scanner(System.in);
-		
 		String str = in.next();
-		char[] ch = str.toCharArray();
-		String answer="";
+		char[] chstr = str.toCharArray();
+		String answer = " ";
 		
-		for(int i=0;i<ch.length;i++) {
-			for (int j = 1; j < i+1; j++) {
-				if(ch[i]==ch[j]) {
-					System.out.print(ch[i]+" ");
-					
-					System.out.print(ch[j]+" ");
-					continue;
-				}else ch[i] = ch[i];
+		for(int i = 0; i<chstr.length;i++) {
+			for(int j = i+1; j<chstr.length;j++) {
+				if(chstr[i] == chstr[j]) chstr[j] = ' ';
 			}
+//			System.out.println(chstr[i]);
 		}
-		answer =String.valueOf(ch);
+		answer = String.valueOf(chstr).replaceAll("\\s", "");
 		System.out.println(answer);
+
 	}
 
 }
