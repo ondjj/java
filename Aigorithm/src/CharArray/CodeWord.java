@@ -61,28 +61,27 @@ public class CodeWord {
 		 * 
 		 * COOL
 		 */
-		
+
 		Scanner in = new Scanner(System.in);
+		
 		int n = in.nextInt();
-		String code = in.next();
-		String[] arr = new String[n];
-		char[] result = {};
 		
-		for (int i = 0; i < arr.length; i++) {
-			arr[i] = code.substring(0, 8);
-			System.out.print(arr[i] + " ");
-			result = arr[i].toCharArray();
+		String str = in.next();
+		
+		String result = "";
+		
+		for (int i = 0; i < str.length(); i++) {
 			
-		}
-		System.out.println();
-		for (char c : result) {
-			System.out.print(c+" ");
+			String tmp = str.substring(0,7).replace('#', '1').replace('*', '0');
 			
+			int num = Integer.parseInt(tmp,2);
+			
+			result += (char)num;
+			
+			str = str.substring(7);
 		}
 		
-		
-		
-		
+		System.out.println(result);
 
 
 	}
