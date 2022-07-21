@@ -27,25 +27,36 @@ public class MaxValue {
 //		7 9 6 12 
 
 		Scanner in = new Scanner(System.in);
-
-		int n = in.nextInt();
-
-		int[] num = new int[n];
-
-		String result = "0";
-
-		for (int i = 0; i < n; i++) {
-
-			num[i] = in.nextInt();
-		}
-
 		
-		for (int i = 1; i < n-1; i++) {
-			result = num[0]+"";
-			if (num[i] > num[i + 1]) {
-				result = num[i]+"";
+		int n = in.nextInt();
+		
+		int[] arr = new int[n];
+		
+//		int[] temp = new int[n];
+		
+		ArrayList<Integer> answer = new ArrayList<Integer>();
+		
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = in.nextInt();
+		}
+		
+		answer.add(arr[0]);
+		
+		for (int i = 1; i < arr.length; i++) {
+			if(arr[i] > arr[i-1]) {
+//				temp[i] = arr[i];
+				answer.add(arr[i]);
 			}
-			System.out.print(result + " ");
+		}
+		
+		/*
+		 * for (int i : temp) { System.out.print(i+" "); }
+		 * 
+		 * System.out.println();
+		 */
+		
+		for (Integer i : answer) {
+			System.out.print(i+" ");
 		}
 
 	}
