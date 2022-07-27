@@ -1,6 +1,7 @@
 package primenumber;
 //6. 뒤집은 소수
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 //설명
@@ -21,13 +22,29 @@ import java.util.Scanner;
 //23 2 73 2 3
 
 class ReversePrime {
-	public String sosu(int[] arr) {
+	
+	public boolean isPrime(int[] num) {
+		
+		for (int i : num) {
+			if(i == 1) return false;
+		}
+		
+		for (int i = 2; i < num.length; i++) {
+			if(num % i == 0) return false;
+		}
+		
+	}
+	
+	
+	public ArrayList<Integer> sosu(int[] arr) {
 
-		String answer = "";
+		ArrayList<Integer> answer = new ArrayList<>();
 
 		String[] temp = new String[arr.length];
 
 		int[] num = new int[arr.length];
+		
+		boolean flag = true;
 
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] >= 100) {
@@ -39,19 +56,9 @@ class ReversePrime {
 			num[i] = Integer.valueOf(temp[i]);
 
 			System.out.print(num[i] + " ");
-
-			for (int j = 1; j < num[i]; j++) {
-
-				if (num[i] % j == 0) {
-					break;
-				}
-				else {
-				answer += num[i]+" ";
-				}
-			}
-
+			if(isPrime(num[i]))
+				answer.add(num[i]);
 		}
-		System.out.println();
 		return answer;
 	}
 
