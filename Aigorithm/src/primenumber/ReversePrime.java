@@ -23,56 +23,65 @@ import java.util.Scanner;
 
 class ReversePrime {
 	
-	public boolean isPrime(int[] num) {
+	public boolean isPrime(int num) {
+	
+		if(num==1)
+			return false;
 		
-		for (int i : num) {
-			if(i == 1) return false;
+		for (int i = 2; i < num; i++) {
+			if(num%i==0)
+				return false;
+			
 		}
-		
-		for (int i = 2; i < num.length; i++) {
-			if(num % i == 0) return false;
-		}
-		
+		return true;
 	}
 	
 	
-	public ArrayList<Integer> sosu(int[] arr) {
+	public ArrayList<Integer> sosu(int n, int[] arr) {
 
 		ArrayList<Integer> answer = new ArrayList<>();
 
-		String[] temp = new String[arr.length];
-
-		int[] num = new int[arr.length];
 		
-		boolean flag = true;
 
-		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] >= 100) {
-				temp[i] = "" + (arr[i] % 10) % 10 + (arr[i] % 100) / 10 + (arr[i] / 100);
-			} else {
-				temp[i] = "" + (arr[i] % 10) + (arr[i] / 10);
+		for (int i = 0; i < n; i++) {
+//			if (arr[i] >= 100) {
+//				temp[i] = "" + (arr[i] % 10) % 10 + (arr[i] % 100) / 10 + (arr[i] / 100);
+//			} else {
+//				temp[i] = "" + (arr[i] % 10) + (arr[i] / 10);
+//			}
+			int tmp = arr[i];
+			int res = 0;
+			
+			while (tmp>0) {
+				
+				int t = tmp%10;
+				
+				res = res * 10 + t;
+				
+				tmp = tmp / 10;
 			}
-
-			num[i] = Integer.valueOf(temp[i]);
-
-			System.out.print(num[i] + " ");
-			if(isPrime(num[i]))
-				answer.add(num[i]);
+			if(isPrime(res))
+				answer.add(res);
 		}
 		return answer;
 	}
 
 	public static void main(String[] args) {
 		ReversePrime rp = new ReversePrime();
+		
 		Scanner in = new Scanner(System.in);
+		
 		int n = in.nextInt();
+		
 		int[] arr = new int[n];
 
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = in.nextInt();
 		}
 
-		System.out.println(rp.sosu(arr));
+		for (int i : rp.sosu(n, arr)) {
+			System.out.print(i+" ");
+		}
 
 	}
 
