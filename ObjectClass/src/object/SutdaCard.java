@@ -21,7 +21,7 @@ class SutdaCard_info {
 		this(1, true);
 	}
 	
-	// 생성자 this & 오버로딩
+	// 생성자 this & 오버로딩--
 	SutdaCard_info(int num, boolean isKwang){
 		this.num = num;
 		this.isKwang = isKwang;
