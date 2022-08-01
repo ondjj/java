@@ -32,7 +32,7 @@ class Main {
 	}
 
 	public static void main(String[] args) {
-		Main T = new Main();
+		Main_ T = new Main_();
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt();
 
