@@ -6,13 +6,12 @@
 		</list>
 	</section>
 	<section name="ExternalProjectImportWizard">
-		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="true"/>
 		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value="C:\Users\jcjk0\eclipse-workspace"/>
 			<item value="C:\Users\jcjk0\OneDrive\바탕 화면\javajungsuk_basic-master\javajungsuk_basic_src"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
@@ -28,12 +27,5 @@
 			<item value="C:\Users\jcjk0\eclipse-workspace\KokJava\src"/>
 			<item value="C:\Users\jcjk0\OneDrive\바탕 화면\source"/>
 		</list>
-	</section>
-	<section name="CleanDialogSettings">
-		<item key="DIALOG_X_ORIGIN" value="672"/>
-		<item key="DIALOG_Y_ORIGIN" value="217"/>
-		<item key="DIALOG_WIDTH" value="577"/>
-		<item key="DIALOG_HEIGHT" value="445"/>
-		<item key="TOGGLE_SELECTED" value="false"/>
 	</section>
 </section>
