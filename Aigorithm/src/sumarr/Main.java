@@ -3,6 +3,7 @@ package sumarr;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// two pointers algorithm
 public class Main {
 
 	public ArrayList<Integer> solution(int n, int m, int[] a, int[] b) {
